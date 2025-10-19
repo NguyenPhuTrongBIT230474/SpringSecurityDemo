@@ -33,5 +33,11 @@ public class CustomerController {
         return customerService.addCustomer(customer);
     }
 
+    // Xoá khách hàng
+    @DeleteMapping("/{id}")
+    public void deleteCustomer(@PathVariable Long id) {
+        customerService.deleteCustomer(id);
+    }
+
 
 }
