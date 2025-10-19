@@ -5,6 +5,7 @@ public class Customer extends BaseEntity {
     private String phone;
     private String email;
     private String address;
+    private Integer loyaltyPoints;
 
     // Constructor
     public Customer() {}
@@ -27,4 +28,7 @@ public class Customer extends BaseEntity {
 
     public String getAddress() { return address; }
     public void setAddress(String address) { this.address = address; }
+    public Integer getLoyaltyPoints() { // ✅ Phương thức bị thiếu
+        return loyaltyPoints;
+    }
 }
