@@ -21,6 +21,11 @@ public class CustomerController {
     public List<Customer> getAllCustomers() {
         return customerService.getAllCustomers();
     }
+    // Cập nhật khách hàng
+    @PutMapping("/{id}")
+    public Optional<Customer> updateCustomer(@PathVariable Long id, @RequestBody Customer updated) {
+        return customerService.updateCustomer(id, updated);
+    }
 
     // Thêm khách hàng mới
     @PostMapping
