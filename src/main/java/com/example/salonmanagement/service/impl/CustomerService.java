@@ -26,4 +26,17 @@ public class CustomerService {
                 : Comparator.comparing(Customer::getName).reversed());
         return list;
     }
+    // Sửa khách hàng
+    public Optional<Customer> updateCustomer(Long id, Customer updated) {
+        return customerRepository.findById(id).map(customer -> {
+            customer.setName(updated.getName());
+            customer.setPhone(updated.getPhone());
+            customer.setEmail(updated.getEmail());
+            customer.setMembershipType(updated.getMembershipType());
+            customer.setLoyaltyPoints(updated.getLoyaltyPoints());
+            return customerRepository.save(customer);
+        });
+    }
+
+
 }
