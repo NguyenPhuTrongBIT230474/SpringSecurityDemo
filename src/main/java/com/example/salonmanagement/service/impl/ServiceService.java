@@ -82,6 +82,10 @@ public class ServiceService {
     public Optional<ServiceEntity> getServiceById(Integer id) {
         return repository.findById(id);
     }
+
+    public void deleteService(Integer id) {
+        repository.deleteById(id);
+    }
 }
 
 

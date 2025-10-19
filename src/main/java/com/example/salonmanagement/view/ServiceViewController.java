@@ -78,4 +78,11 @@ public class ServiceViewController {
         }
         return "redirect:/services";
     }
+
+    @GetMapping("/delete/{id}")
+    public String deleteService(@PathVariable("id") Integer id) {
+        serviceService.deleteService(id);
+        return "redirect:/services";
+    }
+
 }
