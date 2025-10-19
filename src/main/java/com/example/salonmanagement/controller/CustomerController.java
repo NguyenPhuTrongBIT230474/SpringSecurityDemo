@@ -1,7 +1,7 @@
 package com.example.salonmanagement.controller;
 
 import com.example.salonmanagement.model.Customer;
-import com.example.salonmanagement.service.impl.CustomerService;
+import com.example.salonmanagement.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,5 +21,12 @@ public class CustomerController {
     public List<Customer> getAllCustomers() {
         return customerService.getAllCustomers();
     }
+
+    // Thêm khách hàng mới
+    @PostMapping
+    public Customer addCustomer(@RequestBody Customer customer) {
+        return customerService.addCustomer(customer);
+    }
+
 
 }
