@@ -19,4 +19,11 @@ public class CustomerService {
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
+    // Sắp xếp theo tên
+    public List<Customer> sortByName(boolean asc) {
+        List<Customer> list = customerRepository.findAll();
+        list.sort(asc ? Comparator.comparing(Customer::getName)
+                : Comparator.comparing(Customer::getName).reversed());
+        return list;
+    }
 }
