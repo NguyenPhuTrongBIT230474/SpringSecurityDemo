@@ -47,6 +47,9 @@ public class CustomerService {
     public void deleteCustomer(Long id) {
         customerRepository.deleteById(id);
     }
-
+    // Tìm kiếm
+    public List<Customer> searchCustomers(String keyword) {
+        return customerRepository.findByNameContainingIgnoreCase(keyword);
+    }
 
 }
