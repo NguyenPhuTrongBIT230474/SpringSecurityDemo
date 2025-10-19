@@ -31,7 +31,7 @@ public class CustomerService {
                 : Comparator.comparing(Customer::getName).reversed());
         return list;
     }
-<<<<<<< HEAD
+
     // Sửa khách hàng
     public Optional<Customer> updateCustomer(Long id, Customer updated) {
         return customerRepository.findById(id).map(customer -> {
@@ -43,8 +43,10 @@ public class CustomerService {
             return customerRepository.save(customer);
         });
     }
+    // Xoá khách hàng
+    public void deleteCustomer(Long id) {
+        customerRepository.deleteById(id);
+    }
 
-=======
->>>>>>> develop
 
 }
