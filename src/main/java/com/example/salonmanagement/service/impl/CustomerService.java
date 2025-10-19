@@ -1,4 +1,4 @@
-package com.example.salonmanagement.service.impl;
+package com.example.salonmanagement.service;
 
 import com.example.salonmanagement.model.Customer;
 import com.example.salonmanagement.repository.CustomerRepository;
@@ -19,6 +19,11 @@ public class CustomerService {
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
+    // Thêm khách hàng
+    public Customer addCustomer(Customer customer) {
+        return customerRepository.save(customer);
+    }
+
     // Sắp xếp theo tên
     public List<Customer> sortByName(boolean asc) {
         List<Customer> list = customerRepository.findAll();
@@ -26,4 +31,5 @@ public class CustomerService {
                 : Comparator.comparing(Customer::getName).reversed());
         return list;
     }
+
 }
