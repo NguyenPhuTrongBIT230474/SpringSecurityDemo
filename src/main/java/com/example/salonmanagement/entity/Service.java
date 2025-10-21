@@ -1,4 +1,5 @@
 package com.example.salonmanagement.entity;
 
-public class BookingEntity {
+public class Service {
+
 }

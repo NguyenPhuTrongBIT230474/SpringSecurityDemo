@@ -1,4 +1,4 @@
 package com.example.salonmanagement.entity;
 
-public class PaymentEntity {
+public class Promotion {
 }
