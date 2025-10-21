@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="vi">
 <head>
     <meta charset="UTF-8">
     <title>Thẩm mỹ viện C1-TW</title>
@@ -20,6 +20,11 @@
         <a href="#">Đặt lịch</a>
         <a href="#">Thanh toán</a>
         <a href="#">Sản phẩm</a>
+        <a th:href="@{/login}" class="btn btn-outline-light ms-2" sec:authorize="!isAuthenticated()">Đăng nhập</a>
+
+        <form th:action="@{/logout}" method="post" class="d-inline" sec:authorize="isAuthenticated()">
+            <button type="submit" class="btn btn-outline-warning ms-2">Đăng xuất</button>
+        </form>
     </nav>
 </header>
 

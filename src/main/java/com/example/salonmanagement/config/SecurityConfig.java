@@ -22,16 +22,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        // Cho phép truy cập CSS, JS, hình ảnh
-                        .requestMatchers("/css/**", "/js/**", "/uploads/**", "/webjars/**").permitAll()
-                        // Cho phép truy cập trang chủ
-                        .requestMatchers("/").permitAll()
-
-                        // Cập nhật: Chỉ định quyền cho /staff
+                        // SỬA DÒNG NÀY: Thêm /images/** vào danh sách
+                        .requestMatchers("/css/**", "/js/**", "/uploads/**", "/webjars/**", "/images/**").permitAll()
+                        // Cho phép truy cập trang chủ VÀ trang login
+                        .requestMatchers("/", "/login").permitAll()
                         .requestMatchers("/staff/**").hasAnyRole("ADMIN", "STAFF")
                         .requestMatchers("/staff/add", "/staff/edit/**", "/staff/delete/**").hasRole("ADMIN")
-
-                        // Tất cả các request khác đều yêu cầu đăng nhập
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
