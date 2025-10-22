@@ -76,4 +76,3 @@ server.port=8080
 |                   |  Spring Security 6)                   |
 | Hoàng Anh Tuấn    | Database & Service logic              |
 | Nguyễn Phú Trọng  | Tích hợp & kiểm thử                   |
-# SpringSecurityDemo
